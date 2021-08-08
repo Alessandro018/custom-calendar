@@ -12,7 +12,49 @@
     align-items: center;
     padding: 10px;
     border-radius: 25px;
+    color: rgb(15, 15, 129);
 }
+#calendar-content {
+    display: flex;
+    /* display: none; */
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+.custom-calendar #months {
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+}
+.custom-calendar .list-months {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.custom-calendar .list-months .month {
+    width: 130px;
+    height: 35px;
+    border: solid 1px rgb(188, 213, 245);
+    background-color: rgb(249, 251, 253);
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.custom-calendar .list-months .month:hover {
+    background-color: #f4f4f4;
+}
+.custom-calendar .list-months .selected-month {
+    background-color: rgb(44, 119, 216);
+    border: solid 1px (44, 119, 216);
+    color: #ffff;
+}
+.custom-calendar .list-months .selected-month:hover{
+    background-color: rgb(32, 92, 170);
+}
+
 .custom-calendar .custom-calendar-header {
     width: 80%;
     display: flex;
@@ -21,6 +63,10 @@
 }
 .custom-calendar-header span {
     cursor: pointer;
+    font-size: 18px;
+}
+.custom-calendar-header span:hover {
+    opacity: 0.6;
 }
 .custom-calendar .list-days {
     display: flex;
