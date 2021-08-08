@@ -82,6 +82,9 @@
     align-items: center;
     justify-content: center;
 }
+.list-days .fill-day {
+    width: 43px;
+}
 .list-days .day {
     width: 43px;
     height: 43px;

@@ -1,6 +1,10 @@
 window.onload = () => {
     const listMonths = document.querySelector(".list-months")
     const listDays = document.querySelector(".list-days")
+    const date = new Date();
+    const currentMonth = date.getMonth();
+    let firstDayWeek = new Date(date.getFullYear(), date.getMonth(), 1).getDay()
+    let lastDayMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
     const daysOfTheWeek = [
         "Dom",
         "Seg",
@@ -25,18 +29,27 @@ window.onload = () => {
         "Dezembro"
     ]
     
+    document.getElementById("month").innerHTML = months[currentMonth]
     for (let month = 0; month < months.length; month++) {
-        listMonths.innerHTML += `<div class="month" data-month="${months[month]}">${months[month]}</div>`
+        listMonths.innerHTML += `
+            <div class="month ${months[month] == months[currentMonth] ? 'selected-month' : ''}" data-month="${months[month]}">
+                ${months[month]}
+            </div>`
     }
 
     for(let weekday=0; weekday < daysOfTheWeek.length; weekday++) {
         listDays.innerHTML += `<div class="weekday">${daysOfTheWeek[weekday]}</div>`;
     }
 
-    for(let i=1; i<=31; i++){
+    for (let i = 0; i < firstDayWeek; i++) {
+        listDays.innerHTML += `<div class="fill-day"></div>`;
+    }
+
+    for(let i=1; i<=lastDayMonth; i++){
         listDays.innerHTML += `<div class="day" data-day="${i}">${i}</div>`;
     }
 
+    
     const days = document.querySelectorAll(".list-days .day")
     for (let i = 0; i < days.length; i++) {
         days[i].addEventListener('click', () => {
