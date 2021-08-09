@@ -68,6 +68,13 @@
 .custom-calendar-header span:hover {
     opacity: 0.6;
 }
+.custom-calendar .days {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: 15px;
+    margin-top: 25px;
+}
 .custom-calendar .list-days {
     display: flex;
     flex-wrap: wrap;
