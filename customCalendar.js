@@ -1,6 +1,6 @@
 window.onload = () => {
     const currentYear = new Date().getFullYear()
-    const Calendar = (date = null) => {
+    const Calendar = (date = null, listEventDays = []) => {
         date = date ?? new Date();
         const listMonths = document.querySelector(".list-months")
         const listDays = document.querySelector(".list-days")
@@ -51,11 +51,11 @@ window.onload = () => {
         }
     
         for(let i=1; i<=lastDayMonth; i++){
-            listDays.innerHTML += `<div class="day" data-day="${i}">${i}</div>`;
-        }
-    
-        
-        
+            listDays.innerHTML += `<div class="day" data-day="${i.toString().length === 1 ? '0'+i : i}">
+                ${i}
+                ${listEventDays.indexOf(i) >= 0 ? '<div class="event"></div>' : ''}
+            </div>`;
+        }    
     }
     
     Calendar();
@@ -92,6 +92,4 @@ window.onload = () => {
                 break;
         }
     })
-
-
 }

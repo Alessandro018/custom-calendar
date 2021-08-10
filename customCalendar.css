@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
 .custom-calendar {
     width: 400px;
     height: 420px;
+    background-color: #ffff;
     box-shadow: 2px 3px 20px 0 rgba(0, 0, 0, 0.20);
     display: flex;
     flex-direction: column;
@@ -13,13 +15,14 @@
     padding: 10px;
     border-radius: 25px;
     color: rgb(15, 15, 129);
+    font-family:  'Poppins', sans-serif;
 }
 #calendar-content {
     display: flex;
     /* display: none; */
     flex-direction: column;
     align-items: center;
-    font-family: sans-serif;
+    font-weight: bold;
 }
 .custom-calendar #months {
     display: none;
@@ -42,13 +45,14 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    font-weight: 500;
 }
 .custom-calendar .list-months .month:hover {
     background-color: #f4f4f4;
 }
 .custom-calendar .list-months .selected-month {
     background-color: rgb(44, 119, 216);
-    border: solid 1px (44, 119, 216);
+    border: solid 1px rgb(44, 119, 216);
     color: #ffff;
 }
 .custom-calendar .list-months .selected-month:hover{
@@ -79,7 +83,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    /* width: 90%; */
     margin: 0 auto;
 }
 .list-days .weekday {
@@ -92,6 +95,50 @@
 .list-days .fill-day {
     width: 43px;
 }
+.theme-primary {
+    color: #646C9A;
+}
+.theme-primary .list-days .day {
+    color:rgb(25, 90, 175);
+}
+.theme-primary .list-days .day .event {
+    background-color: #646C9A;
+}
+.theme-primary .list-days .selected-day {
+    color: #ffff;
+}
+.theme-dark {
+    color: #ffff;
+    background-color: #636668;
+}
+.theme-dark .list-days .day {
+    border-color: rgba(150, 145, 150, 0.667);
+}
+.theme-dark .list-days .day .event {
+    background-color: #3fb6bd;
+}
+.theme-dark .list-days .selected-day {
+    background-color:#f4f4f4;
+    border-color: #f4f4f4;
+    color: rgba(34, 31, 34, 0.667);
+}
+.theme-dark .list-months .month {
+    border-color: #baba;
+    background-color: #babaca;
+    color: rgba(34, 31, 34, 0.667);
+}
+.theme-dark .list-months .selected-month{
+    background-color:#3fb6bd;
+    border-color: #3fb6bd;
+    color: rgba(34, 31, 34, 0.667);
+}
+.theme-dark .list-months .selected-month:hover{
+    background-color:#33979c;
+    border-color: #33979c;
+}
+.theme-dark .list-days .weekday {
+    color: #4be2ea;
+}
 .list-days .day {
     width: 43px;
     height: 43px;
@@ -100,9 +147,22 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: relative;
+}
+.list-days .day:hover {
+    opacity: 0.7;
+}
+.list-days .day .event{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(25, 90, 175);
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
 }
 .list-days .selected-day {
     background-color: rgb(44, 119, 216);
-    border: solid 1px (44, 119, 216);
+    border: solid 1px rgb(44, 119, 216);
     color: #ffff;
 }
