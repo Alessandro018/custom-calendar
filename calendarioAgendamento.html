@@ -15,10 +15,14 @@
                 </div>
             </div>
             <div id="calendar-content">
+                <div class="year">
+                    <select name="year" id="year">
+                    </select>
+                </div>
                 <div class="custom-calendar-header">
-                    <span class="previus-month">&#10094;</span>
+                    <span class="change-month previous-month">&#10094;</span>
                     <span id="month"></span>
-                    <span class="next-month">&#10095;</span>
+                    <span class="change-month next-month">&#10095;</span>
                 </div>
                 <div class="days">
                     <div class="list-days">
@@ -29,5 +33,8 @@
     </div>
     <link rel="stylesheet" href="customCalendar.css">
     <script src="customCalendar.js"></script>
+    <script>
+        Calendar(new Date(),5, [2,9,17,23,28,14]);
+    </script>
 </body>
 </html>
